@@ -1,0 +1,126 @@
+package com.ecom.backend.config;
+
+import com.ecom.backend.repository.UserRepository;
+
+import com.ecom.backend.service.Impl.Security.CustomerUserDetailsService;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Lazy;
+import org.springframework.http.HttpMethod;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.AuthenticationProvider;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import org.springframework.web.filter.CorsFilter;
+
+@Configuration
+@EnableWebSecurity
+@EnableGlobalMethodSecurity(prePostEnabled = true)
+public class SecurityConfiguration {
+    private final JwtTokenFilter jwtTokenFilter;
+    private final AuthenticationProvider authenticationProvider;
+    private final UserRepository userDao;
+    private final CustomerUserDetailsService customUserDetailsService;
+
+    public SecurityConfiguration(JwtTokenFilter jwtTokenFilter,
+                                 @Lazy AuthenticationProvider authenticationProvider,
+                                 UserRepository userDao,
+                                 @Lazy CustomerUserDetailsService customUserDetailsService) {
+        this.jwtTokenFilter = jwtTokenFilter;
+        this.authenticationProvider = authenticationProvider;
+        this.userDao = userDao;
+        this.customUserDetailsService = customUserDetailsService;
+    }
+
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http
+                .csrf(csrf -> csrf.disable())
+                .formLogin(lf -> lf.disable())
+                .authorizeHttpRequests(ahr->ahr
+                        .requestMatchers("/api/v1/public/**").permitAll()
+                        .requestMatchers("/api/v1/auth/login").permitAll()
+                        .requestMatchers(HttpMethod.GET,"/api/v1/**")
+                        .permitAll()
+                        .requestMatchers(HttpMethod.GET,"/api/v1/users/**").permitAll()
+                        .requestMatchers(HttpMethod.POST,"/api/v1/users/**").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.PUT,"/api/v1/users/**").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.DELETE,"/api/v1/users/**").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.GET,"/api/v1/categories/**").permitAll()
+                        .requestMatchers(HttpMethod.POST,"/api/v1/categories/**").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.PUT,"/api/v1/categories/**").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.DELETE,"/api/v1/categories/**").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.GET,"/api/v1/commandes/**").permitAll()
+                        .requestMatchers(HttpMethod.POST,"/api/v1/commandes/**").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.PUT,"/api/v1/commandes/**").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.DELETE,"/api/v1/commandes/**").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.GET,"/api/v1/products/**").permitAll()
+                        .requestMatchers(HttpMethod.POST,"/api/v1/products/**").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.PUT,"/api/v1/products/**").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.DELETE,"/api/v1/products/**").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.GET,"/api/v1/roles/**").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.POST,"/api/v1/roles/**").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.PUT,"/api/v1/roles/**").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.DELETE,"/api/v1/roles/**").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.GET,"/api/v1/stocks/**").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.POST,"/api/v1/stocks/**").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.PUT,"/api/v1/stocks/**").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.DELETE,"/api/v1/stocks/**").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.GET,"/api/v1/vehicules/**").permitAll()
+                        .requestMatchers(HttpMethod.POST,"/api/v1/vehicules/**").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.PUT,"/api/v1/vehicules/**").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.DELETE,"/api/v1/vehicules/**").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.GET,"/api/v1/panier/").permitAll()
+                        .requestMatchers(HttpMethod.POST,"/api/v1/panier/**").permitAll()
+                        .requestMatchers(HttpMethod.PUT,"/api/v1/panier/**").permitAll()
+                        .requestMatchers(HttpMethod.DELETE,"/api/v1/panier/**").permitAll()
+                        .requestMatchers("api/v1/**").permitAll()
+                        .requestMatchers("/swagger-ui/**", "/v3/api-docs/**").permitAll()
+                        .anyRequest().authenticated())
+                .sessionManagement(sm->sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .authenticationProvider(authenticationProvider)
+                .addFilterBefore(jwtTokenFilter, UsernamePasswordAuthenticationFilter.class);
+
+        return http.build();
+    }
+
+    @Bean
+    AuthenticationProvider authenticationProvider(){
+        DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
+        authProvider.setUserDetailsService(customUserDetailsService);
+        authProvider.setPasswordEncoder(passwordEncoder());
+        return authProvider;
+    }
+
+    @Bean
+    public CorsFilter corsFilter() {
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        CorsConfiguration config = new CorsConfiguration();
+        config.setAllowCredentials(true);
+        config.addAllowedOrigin("http://localhost:4200");
+        config.addAllowedHeader("*");
+        config.addAllowedMethod("*");
+        source.registerCorsConfiguration("/**", config);
+        return new CorsFilter(source);
+    }
+
+    @Bean
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration configuration) throws Exception {
+        return configuration.getAuthenticationManager();
+    }
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+}

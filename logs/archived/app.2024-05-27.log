@@ -1,0 +1,473 @@
+2024-05-27 00:57:15 [restartedMain] INFO  com.ecom.backend.BackendApplication - Starting BackendApplication using Java 17.0.9 with PID 25876 (C:\Users\asus\IdeaProjects\backend\target\classes started by asus in C:\Users\asus\IdeaProjects\backend)
+2024-05-27 00:57:15 [restartedMain] INFO  com.ecom.backend.BackendApplication - No active profile set, falling back to 1 default profile: "default"
+2024-05-27 00:57:15 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-27 00:57:15 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-05-27 00:57:16 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-27 00:57:16 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 55 ms. Found 6 JPA repository interfaces.
+2024-05-27 00:57:16 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8075 (http)
+2024-05-27 00:57:16 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8075"]
+2024-05-27 00:57:16 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-05-27 00:57:16 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-27 00:57:16 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-05-27 00:57:16 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1567 ms
+2024-05-27 00:57:16 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-05-27 00:57:17 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@c103373
+2024-05-27 00:57:17 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-05-27 00:57:17 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/ecom_db'
+2024-05-27 00:57:17 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-27 00:57:17 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-27 00:57:17 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-05-27 00:57:17 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-27 00:57:17 [restartedMain] WARN  org.hibernate.dialect.Dialect - HHH000511: The 5.5.0 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2024-05-27 00:57:17 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-27 00:57:18 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-27 00:57:18 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-27 00:57:19 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-27 00:57:19 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2b867066, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@791243a, org.springframework.security.web.context.SecurityContextHolderFilter@57f5718e, org.springframework.security.web.header.HeaderWriterFilter@6e8e5e75, org.springframework.web.filter.CorsFilter@2d6270e2, org.springframework.security.web.authentication.logout.LogoutFilter@74274070, com.ecom.backend.config.JwtTokenFilter@34fb18fc, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1308155b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6ecbabcf, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@27378f64, org.springframework.security.web.session.SessionManagementFilter@2cf0bccf, org.springframework.security.web.access.ExceptionTranslationFilter@631c24f0, org.springframework.security.web.access.intercept.AuthorizationFilter@6269ca56]
+2024-05-27 00:57:19 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-05-27 00:57:19 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8075"]
+2024-05-27 00:57:19 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8075 (http) with context path ''
+2024-05-27 00:57:19 [restartedMain] INFO  com.ecom.backend.BackendApplication - Started BackendApplication in 4.996 seconds (process running for 5.629)
+2024-05-27 00:58:19 [http-nio-8075-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-27 00:58:19 [http-nio-8075-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-05-27 00:58:19 [http-nio-8075-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-05-27 01:31:20 [http-nio-8075-exec-3] INFO  c.e.b.s.Impl.ProduitServiceImpl - Fetching produit by ID: 3
+2024-05-27 01:44:28 [http-nio-8075-exec-9] INFO  c.e.b.service.Impl.StockServiceImpl - Fetching all stocks
+2024-05-27 01:44:29 [http-nio-8075-exec-10] INFO  c.e.b.service.Impl.UserServiceImpl - Fetching all users
+2024-05-27 01:44:59 [http-nio-8075-exec-7] INFO  c.e.b.service.Impl.StockServiceImpl - Fetching all stocks
+2024-05-27 01:45:20 [http-nio-8075-exec-4] INFO  c.e.b.service.Impl.StockServiceImpl - Fetching all stocks
+2024-05-27 01:45:21 [http-nio-8075-exec-5] INFO  c.e.b.service.Impl.UserServiceImpl - Fetching all users
+2024-05-27 02:02:49 [http-nio-8075-exec-3] INFO  c.e.b.service.Impl.StockServiceImpl - Fetching all stocks
+2024-05-27 02:02:49 [http-nio-8075-exec-4] INFO  c.e.b.service.Impl.UserServiceImpl - Fetching all users
+2024-05-27 02:02:52 [http-nio-8075-exec-7] INFO  c.e.b.service.Impl.UserServiceImpl - Fetching all users
+2024-05-27 02:02:56 [http-nio-8075-exec-10] INFO  c.e.b.service.Impl.UserServiceImpl - Fetching all users
+2024-05-27 02:02:57 [http-nio-8075-exec-1] INFO  c.e.b.service.Impl.StockServiceImpl - Fetching all stocks
+2024-05-27 02:53:16 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m29s230ms648µs300ns).
+2024-05-27 03:02:20 [http-nio-8075-exec-1] INFO  c.e.b.service.Impl.StockServiceImpl - Fetching all stocks
+2024-05-27 03:02:21 [http-nio-8075-exec-4] INFO  c.e.b.service.Impl.UserServiceImpl - Fetching all users
+2024-05-27 04:07:26 [http-nio-8075-exec-6] INFO  c.e.b.s.Impl.ProduitServiceImpl - Fetching produit by ID: 3
+2024-05-27 04:08:18 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-27 04:08:18 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-05-27 04:08:18 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-05-27 04:30:33 [restartedMain] INFO  com.ecom.backend.BackendApplication - Starting BackendApplication using Java 17.0.9 with PID 20240 (C:\Users\asus\IdeaProjects\backend\target\classes started by asus in C:\Users\asus\IdeaProjects\backend)
+2024-05-27 04:30:33 [restartedMain] INFO  com.ecom.backend.BackendApplication - No active profile set, falling back to 1 default profile: "default"
+2024-05-27 04:30:33 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-27 04:30:33 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-05-27 04:30:34 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-27 04:30:34 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 65 ms. Found 7 JPA repository interfaces.
+2024-05-27 04:30:35 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8075 (http)
+2024-05-27 04:30:35 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8075"]
+2024-05-27 04:30:35 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-05-27 04:30:35 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-27 04:30:35 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-05-27 04:30:35 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1768 ms
+2024-05-27 04:30:35 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-05-27 04:30:35 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@270aa022
+2024-05-27 04:30:35 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-05-27 04:30:35 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/ecom_db'
+2024-05-27 04:30:35 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-27 04:30:35 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-27 04:30:35 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-05-27 04:30:36 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-27 04:30:36 [restartedMain] WARN  org.hibernate.dialect.Dialect - HHH000511: The 5.5.0 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2024-05-27 04:30:36 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-27 04:30:37 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-27 04:30:37 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-27 04:30:37 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-27 04:30:38 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7eddc612, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6892886e, org.springframework.security.web.context.SecurityContextHolderFilter@2ed36355, org.springframework.security.web.header.HeaderWriterFilter@2fcf91ca, org.springframework.web.filter.CorsFilter@2b7a6d66, org.springframework.security.web.authentication.logout.LogoutFilter@f220167, com.ecom.backend.config.JwtTokenFilter@7520fa61, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@38dadc77, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4cffaa04, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@66d46861, org.springframework.security.web.session.SessionManagementFilter@787ba375, org.springframework.security.web.access.ExceptionTranslationFilter@132dd268, org.springframework.security.web.access.intercept.AuthorizationFilter@5158f02f]
+2024-05-27 04:30:38 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-05-27 04:30:38 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8075"]
+2024-05-27 04:30:38 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8075 (http) with context path ''
+2024-05-27 04:30:38 [restartedMain] INFO  com.ecom.backend.BackendApplication - Started BackendApplication in 5.588 seconds (process running for 6.155)
+2024-05-27 04:40:30 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-27 04:40:30 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-05-27 04:40:30 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-05-27 18:18:55 [restartedMain] INFO  com.ecom.backend.BackendApplication - Starting BackendApplication using Java 17.0.9 with PID 23024 (C:\Users\asus\IdeaProjects\backend\target\classes started by asus in C:\Users\asus\IdeaProjects\backend)
+2024-05-27 18:18:55 [restartedMain] INFO  com.ecom.backend.BackendApplication - No active profile set, falling back to 1 default profile: "default"
+2024-05-27 18:18:55 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-27 18:18:55 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-05-27 18:18:56 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-27 18:18:56 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 78 ms. Found 7 JPA repository interfaces.
+2024-05-27 18:18:57 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8075 (http)
+2024-05-27 18:18:57 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8075"]
+2024-05-27 18:18:57 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-05-27 18:18:57 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-27 18:18:57 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-05-27 18:18:57 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2000 ms
+2024-05-27 18:18:57 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-05-27 18:18:57 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5aa56129
+2024-05-27 18:18:57 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-05-27 18:18:57 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/ecom_db'
+2024-05-27 18:18:57 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-27 18:18:57 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-27 18:18:57 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-05-27 18:18:58 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-27 18:18:58 [restartedMain] WARN  org.hibernate.dialect.Dialect - HHH000511: The 5.5.0 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2024-05-27 18:18:58 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-27 18:18:59 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-27 18:18:59 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-27 18:19:00 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-27 18:19:00 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@633ad882, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@25c94428, org.springframework.security.web.context.SecurityContextHolderFilter@3ebe298, org.springframework.security.web.header.HeaderWriterFilter@5be4b1a, org.springframework.web.filter.CorsFilter@69b1d9a8, org.springframework.security.web.authentication.logout.LogoutFilter@18d7f5bd, com.ecom.backend.config.JwtTokenFilter@23d63165, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2ea57d7d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@483563d5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4755c878, org.springframework.security.web.session.SessionManagementFilter@6bfb8aa5, org.springframework.security.web.access.ExceptionTranslationFilter@572350ff, org.springframework.security.web.access.intercept.AuthorizationFilter@159a65e8]
+2024-05-27 18:19:00 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-05-27 18:19:00 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8075"]
+2024-05-27 18:19:00 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8075 (http) with context path ''
+2024-05-27 18:19:00 [restartedMain] INFO  com.ecom.backend.BackendApplication - Started BackendApplication in 6.018 seconds (process running for 6.774)
+2024-05-27 18:19:47 [http-nio-8075-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-27 18:19:47 [http-nio-8075-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-05-27 18:19:47 [http-nio-8075-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-05-27 18:20:55 [http-nio-8075-exec-7] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 18:23:36 [http-nio-8075-exec-2] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 18:24:17 [http-nio-8075-exec-6] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 18:27:49 [http-nio-8075-exec-3] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 18:27:52 [http-nio-8075-exec-5] INFO  c.e.b.service.Impl.StockServiceImpl - Fetching all stocks
+2024-05-27 18:27:56 [http-nio-8075-exec-8] INFO  c.e.b.service.Impl.StockServiceImpl - Fetching all stocks
+2024-05-27 18:28:12 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-27 18:28:12 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-05-27 18:28:12 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-05-27 18:28:14 [restartedMain] INFO  com.ecom.backend.BackendApplication - Starting BackendApplication using Java 17.0.9 with PID 32720 (C:\Users\asus\IdeaProjects\backend\target\classes started by asus in C:\Users\asus\IdeaProjects\backend)
+2024-05-27 18:28:14 [restartedMain] INFO  com.ecom.backend.BackendApplication - No active profile set, falling back to 1 default profile: "default"
+2024-05-27 18:28:14 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-27 18:28:14 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-05-27 18:28:15 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-27 18:28:15 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 77 ms. Found 7 JPA repository interfaces.
+2024-05-27 18:28:16 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8075 (http)
+2024-05-27 18:28:16 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8075"]
+2024-05-27 18:28:16 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-05-27 18:28:16 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-27 18:28:16 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-05-27 18:28:16 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1875 ms
+2024-05-27 18:28:16 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-05-27 18:28:16 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@68536f83
+2024-05-27 18:28:16 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-05-27 18:28:16 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/ecom_db'
+2024-05-27 18:28:17 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-27 18:28:17 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-27 18:28:17 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-05-27 18:28:17 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-27 18:28:17 [restartedMain] WARN  org.hibernate.dialect.Dialect - HHH000511: The 5.5.0 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2024-05-27 18:28:17 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-27 18:28:18 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-27 18:28:18 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-27 18:28:19 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-27 18:28:19 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1b44b427, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@331ad391, org.springframework.security.web.context.SecurityContextHolderFilter@2fcf91ca, org.springframework.security.web.header.HeaderWriterFilter@755249d0, org.springframework.web.filter.CorsFilter@1c7e75d5, org.springframework.security.web.authentication.logout.LogoutFilter@3f2f0443, com.ecom.backend.config.JwtTokenFilter@378eedb6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@787ba375, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3cc1e7db, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5158f02f, org.springframework.security.web.session.SessionManagementFilter@73ab2edd, org.springframework.security.web.access.ExceptionTranslationFilter@7a687f1e, org.springframework.security.web.access.intercept.AuthorizationFilter@2f60e2dc]
+2024-05-27 18:28:19 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-05-27 18:28:19 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8075"]
+2024-05-27 18:28:19 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8075 (http) with context path ''
+2024-05-27 18:28:19 [restartedMain] INFO  com.ecom.backend.BackendApplication - Started BackendApplication in 5.585 seconds (process running for 6.351)
+2024-05-27 18:28:37 [http-nio-8075-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-27 18:28:37 [http-nio-8075-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-05-27 18:28:37 [http-nio-8075-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2024-05-27 18:30:47 [http-nio-8075-exec-2] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 18:41:10 [http-nio-8075-exec-4] INFO  c.e.b.service.Impl.UserServiceImpl - Fetching all users
+2024-05-27 18:41:29 [http-nio-8075-exec-9] INFO  c.e.b.service.Impl.StockServiceImpl - Fetching all stocks
+2024-05-27 18:41:33 [http-nio-8075-exec-10] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 18:41:45 [http-nio-8075-exec-2] INFO  c.e.b.service.Impl.UserServiceImpl - Fetching all users
+2024-05-27 18:41:48 [http-nio-8075-exec-3] INFO  c.e.b.service.Impl.StockServiceImpl - Fetching all stocks
+2024-05-27 18:44:23 [http-nio-8075-exec-8] INFO  c.e.b.service.Impl.StockServiceImpl - Fetching all stocks
+2024-05-27 18:44:29 [http-nio-8075-exec-9] INFO  c.e.b.service.Impl.UserServiceImpl - Fetching all users
+2024-05-27 18:44:34 [http-nio-8075-exec-10] INFO  c.e.b.service.Impl.StockServiceImpl - Fetching all stocks
+2024-05-27 18:44:39 [http-nio-8075-exec-4] INFO  c.e.b.service.Impl.UserServiceImpl - Fetching all users
+2024-05-27 18:44:41 [http-nio-8075-exec-6] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 18:44:57 [http-nio-8075-exec-8] INFO  c.e.b.service.Impl.UserServiceImpl - Fetching all users
+2024-05-27 18:47:01 [http-nio-8075-exec-4] INFO  c.e.b.service.Impl.StockServiceImpl - Fetching all stocks
+2024-05-27 18:47:04 [http-nio-8075-exec-5] INFO  c.e.b.service.Impl.UserServiceImpl - Fetching all users
+2024-05-27 18:47:54 [http-nio-8075-exec-9] INFO  c.e.b.service.Impl.UserServiceImpl - Fetching all users
+2024-05-27 18:47:56 [http-nio-8075-exec-1] INFO  c.e.b.service.Impl.UserServiceImpl - Fetching all users
+2024-05-27 18:48:01 [http-nio-8075-exec-3] INFO  c.e.b.service.Impl.UserServiceImpl - Fetching user by ID: 1
+2024-05-27 18:48:03 [http-nio-8075-exec-4] INFO  c.e.b.service.Impl.UserServiceImpl - Fetching all users
+2024-05-27 18:48:11 [http-nio-8075-exec-6] INFO  c.e.b.service.Impl.UserServiceImpl - Fetching user by ID: 1
+2024-05-27 18:48:13 [http-nio-8075-exec-7] INFO  c.e.b.service.Impl.UserServiceImpl - Fetching all users
+2024-05-27 18:49:02 [http-nio-8075-exec-1] INFO  c.e.b.service.Impl.UserServiceImpl - Fetching all users
+2024-05-27 18:51:21 [http-nio-8075-exec-7] INFO  c.e.b.service.Impl.UserServiceImpl - Fetching all users
+2024-05-27 18:51:23 [http-nio-8075-exec-9] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 18:51:29 [http-nio-8075-exec-3] INFO  c.e.b.service.Impl.StockServiceImpl - Fetching all stocks
+2024-05-27 18:51:29 [http-nio-8075-exec-4] INFO  c.e.b.service.Impl.UserServiceImpl - Fetching all users
+2024-05-27 18:51:30 [http-nio-8075-exec-5] INFO  c.e.b.service.Impl.StockServiceImpl - Fetching all stocks
+2024-05-27 18:51:32 [http-nio-8075-exec-7] INFO  c.e.b.service.Impl.UserServiceImpl - Fetching all users
+2024-05-27 18:51:34 [http-nio-8075-exec-9] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 18:53:42 [http-nio-8075-exec-2] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 18:53:44 [http-nio-8075-exec-4] INFO  c.e.b.service.Impl.UserServiceImpl - Fetching all users
+2024-05-27 18:53:45 [http-nio-8075-exec-5] INFO  c.e.b.service.Impl.StockServiceImpl - Fetching all stocks
+2024-05-27 18:56:31 [http-nio-8075-exec-5] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 19:00:34 [http-nio-8075-exec-4] INFO  c.e.b.service.Impl.StockServiceImpl - Fetching all stocks
+2024-05-27 19:00:35 [http-nio-8075-exec-5] INFO  c.e.b.service.Impl.UserServiceImpl - Fetching all users
+2024-05-27 19:00:38 [http-nio-8075-exec-7] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 19:08:43 [http-nio-8075-exec-6] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 19:10:22 [http-nio-8075-exec-10] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 19:10:28 [http-nio-8075-exec-2] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 19:10:31 [http-nio-8075-exec-4] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 19:10:33 [http-nio-8075-exec-6] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 19:10:49 [http-nio-8075-exec-8] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 19:10:58 [http-nio-8075-exec-10] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 19:11:35 [http-nio-8075-exec-2] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 19:11:36 [http-nio-8075-exec-4] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 19:11:43 [http-nio-8075-exec-6] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 19:11:50 [http-nio-8075-exec-8] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 19:12:05 [http-nio-8075-exec-10] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 19:12:09 [http-nio-8075-exec-2] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 19:12:13 [http-nio-8075-exec-4] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 19:12:23 [http-nio-8075-exec-6] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 19:12:29 [http-nio-8075-exec-8] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 19:12:35 [http-nio-8075-exec-10] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 19:12:41 [http-nio-8075-exec-2] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 19:12:57 [http-nio-8075-exec-4] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 19:13:35 [http-nio-8075-exec-6] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 19:13:50 [http-nio-8075-exec-8] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 19:13:52 [http-nio-8075-exec-10] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 19:14:09 [http-nio-8075-exec-2] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 19:14:31 [http-nio-8075-exec-7] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 19:20:08 [http-nio-8075-exec-1] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 19:23:53 [http-nio-8075-exec-5] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 19:24:03 [http-nio-8075-exec-7] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 19:24:30 [http-nio-8075-exec-8] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 19:25:13 [http-nio-8075-exec-1] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 19:37:13 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-27 19:37:13 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-05-27 19:37:13 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-05-27 20:37:55 [restartedMain] INFO  com.ecom.backend.BackendApplication - Starting BackendApplication using Java 17.0.9 with PID 15908 (C:\Users\asus\IdeaProjects\backend\target\classes started by asus in C:\Users\asus\IdeaProjects\backend)
+2024-05-27 20:37:55 [restartedMain] INFO  com.ecom.backend.BackendApplication - No active profile set, falling back to 1 default profile: "default"
+2024-05-27 20:37:55 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-27 20:37:55 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-05-27 20:37:56 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-27 20:37:56 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 72 ms. Found 7 JPA repository interfaces.
+2024-05-27 20:37:57 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8075 (http)
+2024-05-27 20:37:57 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8075"]
+2024-05-27 20:37:57 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-05-27 20:37:57 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-27 20:37:57 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-05-27 20:37:57 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1838 ms
+2024-05-27 20:37:57 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-05-27 20:37:57 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@677480ee
+2024-05-27 20:37:57 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-05-27 20:37:57 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/ecom_db'
+2024-05-27 20:37:58 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-27 20:37:58 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-27 20:37:58 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-05-27 20:37:58 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-27 20:37:58 [restartedMain] WARN  org.hibernate.dialect.Dialect - HHH000511: The 5.5.0 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2024-05-27 20:37:58 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-27 20:37:59 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-27 20:37:59 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-27 20:38:00 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-27 20:38:00 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@55e83182, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4a5e2b61, org.springframework.security.web.context.SecurityContextHolderFilter@755249d0, org.springframework.security.web.header.HeaderWriterFilter@548df354, org.springframework.web.filter.CorsFilter@279e83cd, org.springframework.security.web.authentication.logout.LogoutFilter@5b9cd5f6, com.ecom.backend.config.JwtTokenFilter@5b406d8b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@73ab2edd, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@132dd268, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2f60e2dc, org.springframework.security.web.session.SessionManagementFilter@7e6830f6, org.springframework.security.web.access.ExceptionTranslationFilter@5b6b2b05, org.springframework.security.web.access.intercept.AuthorizationFilter@f220167]
+2024-05-27 20:38:01 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-05-27 20:38:01 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8075"]
+2024-05-27 20:38:01 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8075 (http) with context path ''
+2024-05-27 20:38:01 [restartedMain] INFO  com.ecom.backend.BackendApplication - Started BackendApplication in 5.855 seconds (process running for 6.673)
+2024-05-27 20:38:33 [http-nio-8075-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-27 20:38:33 [http-nio-8075-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-05-27 20:38:33 [http-nio-8075-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2024-05-27 20:38:34 [http-nio-8075-exec-1] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 20:38:38 [http-nio-8075-exec-4] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 20:41:02 [http-nio-8075-exec-8] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 20:41:20 [http-nio-8075-exec-10] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 20:41:22 [http-nio-8075-exec-1] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 20:43:52 [http-nio-8075-exec-6] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 20:45:25 [http-nio-8075-exec-9] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 20:45:36 [http-nio-8075-exec-1] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 21:01:04 [http-nio-8075-exec-6] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 21:01:12 [http-nio-8075-exec-10] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 21:03:05 [http-nio-8075-exec-8] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 21:04:01 [http-nio-8075-exec-10] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 21:04:05 [http-nio-8075-exec-2] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 21:04:38 [http-nio-8075-exec-4] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 21:05:22 [http-nio-8075-exec-6] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 21:06:12 [http-nio-8075-exec-10] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 21:06:20 [http-nio-8075-exec-2] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 21:07:08 [http-nio-8075-exec-8] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 21:07:10 [http-nio-8075-exec-10] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 21:16:39 [http-nio-8075-exec-1] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 21:23:52 [http-nio-8075-exec-8] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 21:29:11 [http-nio-8075-exec-4] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 21:29:15 [http-nio-8075-exec-8] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 21:29:26 [http-nio-8075-exec-10] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 21:29:32 [http-nio-8075-exec-1] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 21:35:46 [http-nio-8075-exec-6] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 21:35:46 [http-nio-8075-exec-6] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 21:36:21 [http-nio-8075-exec-8] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 21:36:21 [http-nio-8075-exec-8] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 21:41:46 [http-nio-8075-exec-10] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 21:41:46 [http-nio-8075-exec-10] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 21:41:55 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-27 21:41:55 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-05-27 21:41:55 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-05-27 21:41:59 [restartedMain] INFO  com.ecom.backend.BackendApplication - Starting BackendApplication using Java 17.0.9 with PID 33212 (C:\Users\asus\IdeaProjects\backend\target\classes started by asus in C:\Users\asus\IdeaProjects\backend)
+2024-05-27 21:41:59 [restartedMain] INFO  com.ecom.backend.BackendApplication - No active profile set, falling back to 1 default profile: "default"
+2024-05-27 21:41:59 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-27 21:41:59 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-05-27 21:42:01 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-27 21:42:01 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 88 ms. Found 7 JPA repository interfaces.
+2024-05-27 21:42:01 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8075 (http)
+2024-05-27 21:42:02 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8075"]
+2024-05-27 21:42:02 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-05-27 21:42:02 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-27 21:42:02 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-05-27 21:42:02 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2083 ms
+2024-05-27 21:42:02 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-05-27 21:42:02 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@64d3f81
+2024-05-27 21:42:02 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-05-27 21:42:02 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/ecom_db'
+2024-05-27 21:42:02 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-27 21:42:02 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-27 21:42:02 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-05-27 21:42:02 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-27 21:42:02 [restartedMain] WARN  org.hibernate.dialect.Dialect - HHH000511: The 5.5.0 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2024-05-27 21:42:02 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-27 21:42:03 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-27 21:42:03 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-27 21:42:04 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-27 21:42:04 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@60743b33, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5b9cd5f6, org.springframework.security.web.context.SecurityContextHolderFilter@37dab972, org.springframework.security.web.header.HeaderWriterFilter@ee99c40, org.springframework.web.filter.CorsFilter@2a24a684, org.springframework.security.web.authentication.logout.LogoutFilter@4241c241, com.ecom.backend.config.JwtTokenFilter@64273101, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@14d0e9a8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@37d975, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3479578, org.springframework.security.web.session.SessionManagementFilter@61ab056f, org.springframework.security.web.access.ExceptionTranslationFilter@7e6049fa, org.springframework.security.web.access.intercept.AuthorizationFilter@5cdce1fa]
+2024-05-27 21:42:05 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-05-27 21:42:05 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8075"]
+2024-05-27 21:42:05 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8075 (http) with context path ''
+2024-05-27 21:42:05 [restartedMain] INFO  com.ecom.backend.BackendApplication - Started BackendApplication in 5.86 seconds (process running for 6.617)
+2024-05-27 21:42:38 [http-nio-8075-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-27 21:42:38 [http-nio-8075-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-05-27 21:42:38 [http-nio-8075-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-05-27 21:42:38 [http-nio-8075-exec-2] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 21:42:38 [http-nio-8075-exec-1] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 21:42:38 [http-nio-8075-exec-2] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 21:42:38 [http-nio-8075-exec-2] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 21:42:38 [http-nio-8075-exec-1] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 21:42:39 [http-nio-8075-exec-3] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 21:42:39 [http-nio-8075-exec-3] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 21:42:41 [http-nio-8075-exec-5] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 21:42:41 [http-nio-8075-exec-4] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 21:42:41 [http-nio-8075-exec-4] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 21:42:41 [http-nio-8075-exec-5] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 21:42:41 [http-nio-8075-exec-5] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 21:42:42 [http-nio-8075-exec-6] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 21:42:42 [http-nio-8075-exec-6] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 21:42:43 [http-nio-8075-exec-8] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 21:42:43 [http-nio-8075-exec-8] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 21:42:43 [http-nio-8075-exec-8] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 21:42:43 [http-nio-8075-exec-7] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 21:42:43 [http-nio-8075-exec-7] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 21:42:49 [http-nio-8075-exec-9] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 21:42:49 [http-nio-8075-exec-9] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 21:42:50 [http-nio-8075-exec-2] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 21:42:50 [http-nio-8075-exec-2] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 21:42:50 [http-nio-8075-exec-2] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 21:42:50 [http-nio-8075-exec-10] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 21:42:50 [http-nio-8075-exec-10] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 21:43:39 [http-nio-8075-exec-3] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 21:43:39 [http-nio-8075-exec-3] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 21:43:39 [http-nio-8075-exec-3] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 21:43:39 [http-nio-8075-exec-1] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 21:43:39 [http-nio-8075-exec-1] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 21:44:15 [http-nio-8075-exec-5] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 21:44:15 [http-nio-8075-exec-5] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 21:44:15 [http-nio-8075-exec-5] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 21:44:15 [http-nio-8075-exec-4] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 21:44:15 [http-nio-8075-exec-4] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 21:44:17 [http-nio-8075-exec-6] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 21:44:17 [http-nio-8075-exec-6] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 21:44:18 [http-nio-8075-exec-7] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 21:44:18 [http-nio-8075-exec-8] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 21:44:18 [http-nio-8075-exec-8] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 21:44:18 [http-nio-8075-exec-7] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 21:44:18 [http-nio-8075-exec-7] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 21:44:20 [http-nio-8075-exec-9] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 21:44:20 [http-nio-8075-exec-9] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 21:44:23 [http-nio-8075-exec-10] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 21:44:23 [http-nio-8075-exec-2] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 21:44:23 [http-nio-8075-exec-2] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 21:44:23 [http-nio-8075-exec-10] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 21:44:23 [http-nio-8075-exec-10] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 21:44:26 [http-nio-8075-exec-3] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 21:44:26 [http-nio-8075-exec-3] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 21:44:29 [http-nio-8075-exec-5] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 21:44:29 [http-nio-8075-exec-5] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 21:44:29 [http-nio-8075-exec-5] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 21:44:29 [http-nio-8075-exec-1] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 21:44:29 [http-nio-8075-exec-1] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 21:44:58 [http-nio-8075-exec-6] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 21:44:58 [http-nio-8075-exec-6] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 21:44:58 [http-nio-8075-exec-6] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 21:44:58 [http-nio-8075-exec-4] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 21:44:58 [http-nio-8075-exec-4] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 21:45:05 [http-nio-8075-exec-7] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 21:45:05 [http-nio-8075-exec-7] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 21:45:05 [http-nio-8075-exec-7] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 21:45:05 [http-nio-8075-exec-8] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 21:45:05 [http-nio-8075-exec-8] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 21:45:13 [http-nio-8075-exec-9] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 21:45:13 [http-nio-8075-exec-9] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 21:45:17 [http-nio-8075-exec-10] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 21:45:17 [http-nio-8075-exec-10] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 21:45:17 [http-nio-8075-exec-10] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 21:45:17 [http-nio-8075-exec-2] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 21:45:17 [http-nio-8075-exec-2] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 21:47:44 [http-nio-8075-exec-6] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 21:47:44 [http-nio-8075-exec-6] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 21:47:44 [http-nio-8075-exec-6] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 21:47:44 [http-nio-8075-exec-1] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 21:47:44 [http-nio-8075-exec-1] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 21:47:50 [http-nio-8075-exec-7] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 21:47:50 [http-nio-8075-exec-7] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 21:47:50 [http-nio-8075-exec-7] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 21:47:50 [http-nio-8075-exec-4] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 21:47:50 [http-nio-8075-exec-4] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 21:49:55 [http-nio-8075-exec-10] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 21:49:55 [http-nio-8075-exec-10] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 21:49:57 [http-nio-8075-exec-3] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 21:49:57 [http-nio-8075-exec-3] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 21:49:57 [http-nio-8075-exec-3] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 21:49:57 [http-nio-8075-exec-2] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 21:49:57 [http-nio-8075-exec-2] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 22:15:57 [http-nio-8075-exec-1] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 22:15:57 [http-nio-8075-exec-1] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 22:15:59 [http-nio-8075-exec-4] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 22:15:59 [http-nio-8075-exec-4] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 22:15:59 [http-nio-8075-exec-7] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 22:15:59 [http-nio-8075-exec-4] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 22:15:59 [http-nio-8075-exec-7] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 22:18:15 [http-nio-8075-exec-3] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 22:18:15 [http-nio-8075-exec-3] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 22:18:15 [http-nio-8075-exec-3] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 22:18:15 [http-nio-8075-exec-10] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 22:18:15 [http-nio-8075-exec-10] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 22:19:23 [http-nio-8075-exec-1] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 22:19:23 [http-nio-8075-exec-6] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 22:19:23 [http-nio-8075-exec-6] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 22:19:23 [http-nio-8075-exec-1] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 22:19:23 [http-nio-8075-exec-1] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 22:29:02 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m29s632ms771µs).
+2024-05-27 22:31:29 [http-nio-8075-exec-10] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 22:31:29 [http-nio-8075-exec-10] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 22:31:34 [http-nio-8075-exec-2] INFO  c.e.b.service.Impl.StockServiceImpl - Fetching all stocks
+2024-05-27 22:31:34 [http-nio-8075-exec-2] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 22:31:34 [http-nio-8075-exec-2] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 22:31:36 [http-nio-8075-exec-5] INFO  c.e.b.service.Impl.UserServiceImpl - Fetching all users
+2024-05-27 22:31:37 [http-nio-8075-exec-6] INFO  c.e.b.service.Impl.StockServiceImpl - Fetching all stocks
+2024-05-27 22:31:37 [http-nio-8075-exec-6] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 22:31:37 [http-nio-8075-exec-6] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 22:31:38 [http-nio-8075-exec-1] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 22:31:38 [http-nio-8075-exec-1] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 22:31:39 [http-nio-8075-exec-4] INFO  c.e.b.service.Impl.UserServiceImpl - Fetching all users
+2024-05-27 22:31:42 [http-nio-8075-exec-8] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 22:31:42 [http-nio-8075-exec-8] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 22:31:42 [http-nio-8075-exec-8] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 22:31:43 [http-nio-8075-exec-9] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 22:31:43 [http-nio-8075-exec-9] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 22:31:44 [http-nio-8075-exec-3] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 22:31:44 [http-nio-8075-exec-3] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 22:31:44 [http-nio-8075-exec-3] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 22:31:47 [http-nio-8075-exec-2] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 22:31:47 [http-nio-8075-exec-2] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 22:31:48 [http-nio-8075-exec-5] INFO  c.e.b.service.Impl.StockServiceImpl - Fetching all stocks
+2024-05-27 22:31:48 [http-nio-8075-exec-5] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 22:31:48 [http-nio-8075-exec-5] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 22:31:49 [http-nio-8075-exec-6] INFO  c.e.b.service.Impl.UserServiceImpl - Fetching all users
+2024-05-27 22:31:50 [http-nio-8075-exec-4] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 22:31:50 [http-nio-8075-exec-4] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 22:31:50 [http-nio-8075-exec-4] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 22:31:51 [http-nio-8075-exec-7] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 22:31:51 [http-nio-8075-exec-7] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 22:32:08 [http-nio-8075-exec-3] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
+2024-05-27 22:32:08 [http-nio-8075-exec-3] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 22:32:08 [http-nio-8075-exec-3] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 22:32:08 [http-nio-8075-exec-9] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-05-27 22:32:08 [http-nio-8075-exec-9] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)]
+2024-05-27 22:46:01 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=58s510ms210µs500ns).
+2024-05-27 23:10:32 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m919ms131µs400ns).
