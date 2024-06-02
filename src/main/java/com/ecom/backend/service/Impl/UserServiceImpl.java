@@ -1,5 +1,6 @@
 package com.ecom.backend.service.Impl;
 
+import com.ecom.backend.dto.RoleDto;
 import com.ecom.backend.dto.UserDto;
 import com.ecom.backend.entity.Avis;
 import com.ecom.backend.entity.Produit;
@@ -19,6 +20,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 @Service
@@ -58,49 +60,48 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserDto save(UserDto userDto) {
         log.info("Attempting to create user with username: {}", userDto.username());
-        if(userDto.username() != null)
-        {
+
+        if (userDto.username() != null) {
             boolean userExists = userDao.findByUsername(userDto.username()).isPresent();
-            if(userExists) {
+            if (userExists) {
                 throw new RuntimeException("This username is already used");
             }
         }
+
         if (userDto.roleDtos() == null || userDto.roleDtos().isEmpty()) {
             throw new RuntimeException("User must have at least one role");
         }
-        try{
-            prepareUser(userDto);
-            Role roleCl;
-            Role roleV;
-            var roleClient = roleDao.findByName("ROLE_CLIENT");
-            var roleVendeur = roleDao.findByName("ROLE_VENDEUR");
-            if (roleClient.isPresent() && roleVendeur.isPresent()) {
-                roleCl = roleClient.get();
-                roleV = roleVendeur.get();
-            } else {
-                roleV = new Role();
-                roleV.setName("ROLE_VENDEUR");
-                roleV = roleDao.save(roleV);
-                roleCl = new Role();
-                roleCl.setName("ROLE_VENDEUR");
-                roleCl = roleDao.save(roleCl);
-            }
+
+        try {
+            log.info("Roles reçus: {}", userDto.roleDtos());
+
             User user = userTransformer.toEntity(userDto);
-            Set<Role> clientRoles = new HashSet<>();
-            clientRoles.add(roleCl);
-            user.setRoles(clientRoles);
-            Set<Role> vendeurRoles = new HashSet<>();
-            vendeurRoles.add(roleV);
-            user.setRoles(vendeurRoles);
             user.setPassword(passwordEncoder.encode(user.getPassword()));
+
+            Set<Role> userRoles = new HashSet<>();
+            for (RoleDto roleDto : userDto.roleDtos()) {
+                Optional<Role> roleOptional = roleDao.findByName(roleDto.name());
+                if (roleOptional.isPresent()) {
+                    userRoles.add(roleOptional.get());
+                } else {
+                    Role newRole = new Role();
+                    newRole.setName(roleDto.name());
+                    newRole = roleDao.save(newRole);
+                    userRoles.add(newRole);
+                }
+            }
+
+            user.setRoles(userRoles);
+
             log.info("User created successfully with username: {}", userDto.username());
             return userTransformer.toDto(userDao.save(user));
-        }catch (Exception ex)
-        {
+        } catch (Exception ex) {
             log.error("Error occurred while creating user with username: {}", userDto.username(), ex);
-            throw new RuntimeException("An unexpected error occurred while creating the User."+ ex);
+            throw new RuntimeException("An unexpected error occurred while creating the User." + ex);
         }
     }
+
+
 
     @Override
     public UserDto findById(Long id) {
