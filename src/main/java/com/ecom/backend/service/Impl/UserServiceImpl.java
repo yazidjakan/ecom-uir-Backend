@@ -1,16 +1,25 @@
 package com.ecom.backend.service.Impl;
 
 import com.ecom.backend.dto.UserDto;
+import com.ecom.backend.entity.Avis;
+import com.ecom.backend.entity.Produit;
+import com.ecom.backend.entity.Role;
 import com.ecom.backend.entity.User;
+import com.ecom.backend.repository.AvisRepository;
+import com.ecom.backend.repository.ProduitRepository;
+import com.ecom.backend.repository.RoleRepository;
 import com.ecom.backend.repository.UserRepository;
 import com.ecom.backend.service.facade.UserService;
 import com.ecom.backend.transformer.RoleTransformer;
 import com.ecom.backend.transformer.UserTransformer;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Service
 @RequiredArgsConstructor
@@ -20,6 +29,10 @@ public class UserServiceImpl implements UserService {
     private final UserTransformer userTransformer;
     private final UserRepository userDao;
     private final RoleTransformer roleTransformer;
+    private final ProduitRepository produitDao;
+    private final AvisRepository avisDao;
+    private final RoleRepository roleDao;
+    private final PasswordEncoder passwordEncoder;
 
     @Override
     public List<UserDto> findAll() {
@@ -31,6 +44,17 @@ public class UserServiceImpl implements UserService {
         return userTransformer.toDto(users);
     }
 
+    private UserDto prepareUser(UserDto dto){
+        List<User> usersRegistred=userDao.findAll();
+        long nbreAdmins=usersRegistred.stream()
+                .map(user -> user.getRoles().equals("ROLE_ADMIN"))
+                .count();
+        if(nbreAdmins !=0 && dto.roleDtos().equals("ROLE_ADMIN")){
+            throw new RuntimeException("Il peut y'avoir qu'un seul Admin");
+        }else{
+            return dto;
+        }
+    }
     @Override
     public UserDto save(UserDto userDto) {
         log.info("Attempting to create user with username: {}", userDto.username());
@@ -41,8 +65,34 @@ public class UserServiceImpl implements UserService {
                 throw new RuntimeException("This username is already used");
             }
         }
+        if (userDto.roleDtos() == null || userDto.roleDtos().isEmpty()) {
+            throw new RuntimeException("User must have at least one role");
+        }
         try{
+            prepareUser(userDto);
+            Role roleCl;
+            Role roleV;
+            var roleClient = roleDao.findByName("ROLE_CLIENT");
+            var roleVendeur = roleDao.findByName("ROLE_VENDEUR");
+            if (roleClient.isPresent() && roleVendeur.isPresent()) {
+                roleCl = roleClient.get();
+                roleV = roleVendeur.get();
+            } else {
+                roleV = new Role();
+                roleV.setName("ROLE_VENDEUR");
+                roleV = roleDao.save(roleV);
+                roleCl = new Role();
+                roleCl.setName("ROLE_VENDEUR");
+                roleCl = roleDao.save(roleCl);
+            }
             User user = userTransformer.toEntity(userDto);
+            Set<Role> clientRoles = new HashSet<>();
+            clientRoles.add(roleCl);
+            user.setRoles(clientRoles);
+            Set<Role> vendeurRoles = new HashSet<>();
+            vendeurRoles.add(roleV);
+            user.setRoles(vendeurRoles);
+            user.setPassword(passwordEncoder.encode(user.getPassword()));
             log.info("User created successfully with username: {}", userDto.username());
             return userTransformer.toDto(userDao.save(user));
         }catch (Exception ex)
@@ -86,6 +136,7 @@ public class UserServiceImpl implements UserService {
         existingUser.setId(userDto.id());
         existingUser.setUsername(userDto.username());
         existingUser.setPassword(userDto.password());
+        existingUser.setEmail(userDto.email());
         existingUser.setRoles(roleTransformer.toEntitySet(userDto.roleDtos()));
 
         log.info("User updated successfully with ID: {}", userDto.id());
@@ -98,7 +149,25 @@ public class UserServiceImpl implements UserService {
         log.info("Deleting user with ID: {}", id);
 
         UserDto foundUser = findById(id);
+
+        // Supprimer les avis liés aux produits de l'utilisateur
+        List<Produit> foundProductsSeller = produitDao.findBySellerId(id);
+        for (Produit produit : foundProductsSeller) {
+            List<Avis> foundedAvis = avisDao.findByProduitId(produit.getId());
+            for (Avis avis : foundedAvis) {
+                avisDao.delete(avis);
+            }
+            produitDao.delete(produit);
+        }
+
+        List<Avis> foundAvisByUser = avisDao.findByUserId(id);
+        for (Avis avis : foundAvisByUser) {
+            avisDao.delete(avis);
+        }
+
+        // Supprimer l'utilisateur
         userDao.deleteById(foundUser.id());
         log.info("User deleted successfully with ID: {}", id);
     }
+
 }

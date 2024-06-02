@@ -26,17 +26,17 @@ public class CategorieController {
         return ResponseEntity.ok(categorieService.findById(id));
     }
     @PostMapping("/")
-    @PreAuthorize("hasRole('ADMIN')")
+    //@PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<CategoriePostDto> save(@RequestBody CategoriePostDto dto){
         return new ResponseEntity<>(categorieService.save(dto), HttpStatus.CREATED);
     }
     @PutMapping("/id/{id}")
-    @PreAuthorize("hasRole('ADMIN')")
+    //@PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<CategorieGetDto> update(@RequestBody CategorieGetDto dto, @PathVariable Long id){
         return ResponseEntity.ok(categorieService.update(dto,id));
     }
     @DeleteMapping("/id/{id}")
-    @PreAuthorize("hasRole('ADMIN')")
+    //@PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<Void> deleteById(@PathVariable Long id){
         categorieService.deleteById(id);
         return ResponseEntity.noContent().build();

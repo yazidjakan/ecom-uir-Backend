@@ -14,7 +14,6 @@ import java.util.List;
 @AllArgsConstructor
 @Data
 public class Panier {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -40,6 +39,4 @@ public class Panier {
     public void clear() {
         items.clear();
     }
-
-
 }

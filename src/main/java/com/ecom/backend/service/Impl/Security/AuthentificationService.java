@@ -18,6 +18,7 @@ public class AuthentificationService {
 
     public AuthentificationResponse authenticate (AuthentificationRequest request)
     {
+        System.out.println("Authenticating user: " + request.getUsername());
         authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getUsername(),request.getPassword()));
         var user = userDao.findByUsername(request.getUsername()).orElseThrow(() -> new UsernameNotFoundException("User not found with username: " + request.getUsername()));
         var jwtToken = jwtTokenProvider.generateToken(user);

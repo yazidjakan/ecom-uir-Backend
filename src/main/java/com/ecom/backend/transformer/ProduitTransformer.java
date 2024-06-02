@@ -21,6 +21,9 @@ public class ProduitTransformer extends AbstractTransformer<Produit, ProduitGetD
             entity.setImage(dto.image());
             entity.setEtatProduit(dto.etatProduit());
             entity.setCategorie(dto.categorie());
+            entity.setVehicule(dto.vehicule());
+            entity.setStock(dto.stock());
+            entity.setSeller(dto.seller());
             return entity;
         }
     }
@@ -40,7 +43,8 @@ public class ProduitTransformer extends AbstractTransformer<Produit, ProduitGetD
                     entity.getEtatProduit(),
                     entity.getCategorie(),
                     entity.getStock(),
-                    entity.getVehicule()
+                    entity.getVehicule(),
+                    entity.getSeller()
             );
             return dto;
         }

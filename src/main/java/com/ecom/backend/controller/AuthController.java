@@ -17,6 +17,7 @@ public class AuthController {
     private final AuthentificationService authenticationService;
     @PostMapping("/login")
     public ResponseEntity<AuthentificationResponse> authenticate(@RequestBody AuthentificationRequest request){
+        System.out.println("Received authentication request for username: " + request.getUsername());
         return ResponseEntity.ok(authenticationService.authenticate(request));
     }
 }

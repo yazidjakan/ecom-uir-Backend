@@ -1,11 +1,14 @@
 package com.ecom.backend.entity;
 
 import com.ecom.backend.enums.EtatProduit;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Entity
 @NoArgsConstructor
@@ -27,16 +30,24 @@ public class Produit {
 
     @ManyToOne
     @JoinColumn(name = "categorie_id")
-    @JsonManagedReference
+    @JsonBackReference(value = "produit-categorie")
     private Categorie categorie;
 
     @ManyToOne
     @JoinColumn(name = "stock_id")
-    @JsonManagedReference
+    @JsonBackReference(value = "produit-stock")
     private Stock stock;
 
     @ManyToOne
     @JoinColumn(name = "vehicule_id")
-    @JsonManagedReference
+    @JsonBackReference(value = "produit-vehicule")
     private Vehicule vehicule;
+
+    @OneToMany(mappedBy = "produit", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference(value = "produit-avis")
+    private List<Avis> avis;
+
+    @ManyToOne
+    @JoinColumn(name = "seller_id")
+    private User seller;
 }

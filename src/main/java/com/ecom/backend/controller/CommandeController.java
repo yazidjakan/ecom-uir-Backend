@@ -26,17 +26,17 @@ public class CommandeController {
         return ResponseEntity.ok(commandeService.findById(id));
     }
     @PostMapping("/")
-    @PreAuthorize("hasRole('ADMIN')")
+    //@PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<CommandePostDto> save(@RequestBody CommandePostDto dto){
         return new ResponseEntity<>(commandeService.save(dto), HttpStatus.CREATED);
     }
     @PutMapping("/id/{id}")
-    @PreAuthorize("hasRole('ADMIN')")
+    //@PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<CommandeGetDto> update(@RequestBody CommandeGetDto dto, @PathVariable Long id){
         return ResponseEntity.ok(commandeService.update(dto,id));
     }
     @DeleteMapping("/id/{id}")
-    @PreAuthorize("hasRole('ADMIN')")
+    //@PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<Void> deleteById(@PathVariable Long id){
         commandeService.deleteById(id);
         return ResponseEntity.noContent().build();

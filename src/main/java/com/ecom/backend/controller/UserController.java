@@ -22,22 +22,21 @@ public class UserController {
         return ResponseEntity.ok(userService.findAll());
     }
     @GetMapping("/id/{id}")
-    @PreAuthorize("hasRole('ADMIN')")
+    //@PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<UserDto> findById(@PathVariable Long id){
         return ResponseEntity.ok(userService.findById(id));
     }
     @PostMapping("/")
-    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<UserDto> save(@RequestBody UserDto dto){
         return new ResponseEntity<>(userService.save(dto), HttpStatus.CREATED);
     }
     @PutMapping("/id/{id}")
-    @PreAuthorize("hasRole('ADMIN')")
+    //@PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<UserDto> update(@RequestBody UserDto dto, @PathVariable Long id){
         return ResponseEntity.ok(userService.update(dto,id));
     }
     @DeleteMapping("/id/{id}")
-    @PreAuthorize("hasRole('ADMIN')")
+    //@PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<Void> deleteById(@PathVariable Long id){
         userService.deleteById(id);
         return ResponseEntity.noContent().build();

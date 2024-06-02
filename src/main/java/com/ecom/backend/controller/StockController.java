@@ -27,17 +27,17 @@ public class StockController {
         return ResponseEntity.ok(stockService.findById(id));
     }
     @PostMapping("/")
-    @PreAuthorize("hasRole('ADMIN')")
+    //@PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<StockPostDto> save(@RequestBody StockPostDto dto){
         return new ResponseEntity<>(stockService.save(dto), HttpStatus.CREATED);
     }
     @PutMapping("/id/{id}")
-    @PreAuthorize("hasRole('ADMIN')")
+    //@PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<StockGetDto> update(@RequestBody StockGetDto dto, @PathVariable Long id){
         return ResponseEntity.ok(stockService.update(dto,id));
     }
     @DeleteMapping("/id/{id}")
-    @PreAuthorize("hasRole('ADMIN')")
+    //@PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<Void> deleteById(@PathVariable Long id){
         stockService.deleteById(id);
         return ResponseEntity.noContent().build();

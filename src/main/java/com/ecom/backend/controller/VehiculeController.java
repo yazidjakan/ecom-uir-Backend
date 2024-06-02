@@ -29,19 +29,19 @@ public class VehiculeController {
     }
 
     @PostMapping("/")
-    @PreAuthorize("hasRole('ADMIN')")
+    //@PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<VehiculePostDto> save(@RequestBody VehiculePostDto dto) {
         return new ResponseEntity<>(VehiculeService.save(dto), HttpStatus.CREATED);
     }
 
     @PutMapping("/id/{id}")
-    @PreAuthorize("hasRole('ADMIN')")
+    //@PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<VehiculeGetDto> update(@RequestBody VehiculeGetDto dto, @PathVariable Long id) {
         return ResponseEntity.ok(VehiculeService.update(dto, id));
     }
 
     @DeleteMapping("/id/{id}")
-    @PreAuthorize("hasRole('ADMIN')")
+    //@PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<Void> deleteById(@PathVariable Long id) {
         VehiculeService.deleteById(id);
         return ResponseEntity.noContent().build();

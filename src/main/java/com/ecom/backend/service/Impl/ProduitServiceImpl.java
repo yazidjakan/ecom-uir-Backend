@@ -38,6 +38,9 @@ public class ProduitServiceImpl implements ProduitService {
         return produitTransformer.toDto(products);
     }
 
+    public List<Produit> getProductsBySeller(Long sellerId) {
+        return produitDao.findBySellerId(sellerId);
+    }
     @Override
     public ProduitGetDto save(ProduitGetDto dto) {
         log.info("Creating new product with name: {}", dto.nom());
@@ -88,7 +91,6 @@ public class ProduitServiceImpl implements ProduitService {
         existingProduit.setNom(dto.nom());
         existingProduit.setPrix(dto.prix());
         existingProduit.setDescription(dto.description());
-        existingProduit.setCategorie(dto.categorie());
         existingProduit.setQuantite(dto.quantite());
         existingProduit.setImage(dto.image());
         existingProduit.setEtatProduit(dto.etatProduit());

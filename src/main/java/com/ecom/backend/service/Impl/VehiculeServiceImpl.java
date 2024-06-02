@@ -82,7 +82,9 @@ public class VehiculeServiceImpl implements VehiculeService {
         existingVehicule.setNomVehicule(dto.nomVehicule());
         existingVehicule.setImage(dto.image());
         existingVehicule.setTypeVehicule(dto.typeVehicule());
-        existingVehicule.setProduits(dto.produits());
+        if (existingVehicule.getProduits() != null) {
+            existingVehicule.setProduits(dto.produits());
+        }
 
         log.info("Successfully updated Vehicule with ID: {}", dto.id());
         return VehiculeTransformer.toDto(VehiculeDao.save(existingVehicule));

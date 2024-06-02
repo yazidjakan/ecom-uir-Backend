@@ -25,17 +25,17 @@ public class RoleController {
         return ResponseEntity.ok(roleService.findById(id));
     }
     @PostMapping("/")
-    @PreAuthorize("hasRole('ADMIN')")
+    //@PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<RoleDto> save(@RequestBody RoleDto dto){
         return new ResponseEntity<>(roleService.save(dto), HttpStatus.CREATED);
     }
     @PutMapping("/id/{id}")
-    @PreAuthorize("hasRole('ADMIN')")
+    //@PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<RoleDto> update(@RequestBody RoleDto dto, @PathVariable Long id){
         return ResponseEntity.ok(roleService.update(dto,id));
     }
     @DeleteMapping("/id/{id}")
-    @PreAuthorize("hasRole('ADMIN')")
+    //@PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<Void> deleteById(@PathVariable Long id){
         roleService.deleteById(id);
         return ResponseEntity.noContent().build();

@@ -1,6 +1,7 @@
 package com.ecom.backend.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,9 +16,12 @@ public class CartItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @ManyToOne
     @JoinColumn(name = "produit_id",  nullable = false)
+    @JsonManagedReference
     private Produit produit;
+
     private Integer quantite;
 
     @ManyToOne
@@ -26,7 +30,7 @@ public class CartItem {
     private Panier panier;
 
     public CartItem(Produit produit, int quantite) {
-        this.produit=produit;
-        this.quantite=quantite;
+        this.produit = produit;
+        this.quantite = quantite;
     }
 }

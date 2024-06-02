@@ -26,6 +26,7 @@ public class User implements UserDetails {
     private String username;
     private String email;
     private String password;
+
     @OneToMany(mappedBy = "user")
     @JsonBackReference
     private List<Commande> commandes;
@@ -42,9 +43,10 @@ public class User implements UserDetails {
                 .map(role -> new SimpleGrantedAuthority(role.getName()))
                 .collect(Collectors.toSet());
     }
+
     @Override
     public String getUsername() {
-        return this.username;
+        return username;
     }
 
     @Override

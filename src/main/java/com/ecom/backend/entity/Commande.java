@@ -15,10 +15,12 @@ public class Commande {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @ManyToOne
     @JoinColumn(name = "user_id")
     @JsonManagedReference
     private User user;
+
     @Enumerated(EnumType.STRING)
     private EtatCommande etatCommande;
 }
