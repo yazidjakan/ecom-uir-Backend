@@ -3,6 +3,7 @@ package com.ecom.backend.controller;
 import com.ecom.backend.dto.UserDto;
 import com.ecom.backend.service.Impl.UserServiceImpl;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -14,6 +15,7 @@ import java.util.List;
 @RequestMapping("/api/v1/users")
 @CrossOrigin(origins = "http://localhost:4200")
 @RequiredArgsConstructor
+@Slf4j
 public class UserController {
     private final UserServiceImpl userService;
 
@@ -28,6 +30,7 @@ public class UserController {
     }
     @PostMapping("/")
     public ResponseEntity<UserDto> save(@RequestBody UserDto dto){
+        log.info("Données reçues pour l'utilisateur : {}", dto);
         return new ResponseEntity<>(userService.save(dto), HttpStatus.CREATED);
     }
     @PutMapping("/id/{id}")

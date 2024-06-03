@@ -60,24 +60,20 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserDto save(UserDto userDto) {
         log.info("Attempting to create user with username: {}", userDto.username());
-
         if (userDto.username() != null) {
             boolean userExists = userDao.findByUsername(userDto.username()).isPresent();
             if (userExists) {
                 throw new RuntimeException("This username is already used");
             }
         }
-
         if (userDto.roleDtos() == null || userDto.roleDtos().isEmpty()) {
             throw new RuntimeException("User must have at least one role");
         }
-
         try {
-            log.info("Roles reçus: {}", userDto.roleDtos());
+            log.info("Roles reçus: {}", userDto.roleDtos()); // Ajoutez ce log pour vérifier les rôles reçus
 
             User user = userTransformer.toEntity(userDto);
             user.setPassword(passwordEncoder.encode(user.getPassword()));
-
             Set<Role> userRoles = new HashSet<>();
             for (RoleDto roleDto : userDto.roleDtos()) {
                 Optional<Role> roleOptional = roleDao.findByName(roleDto.name());
@@ -90,9 +86,7 @@ public class UserServiceImpl implements UserService {
                     userRoles.add(newRole);
                 }
             }
-
             user.setRoles(userRoles);
-
             log.info("User created successfully with username: {}", userDto.username());
             return userTransformer.toDto(userDao.save(user));
         } catch (Exception ex) {
@@ -100,6 +94,7 @@ public class UserServiceImpl implements UserService {
             throw new RuntimeException("An unexpected error occurred while creating the User." + ex);
         }
     }
+
 
 
 

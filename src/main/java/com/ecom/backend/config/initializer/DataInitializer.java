@@ -24,14 +24,21 @@ public class DataInitializer implements CommandLineRunner {
     @Transactional
     public void run(String... args) throws Exception {
         Role adminRole;
+        Role vendeurRole;
 
         var roleOpt = roleDao.findByName("ROLE_ADMIN");
-        if (roleOpt.isPresent()) {
+        var roleVend=roleDao.findByName("ROLE_VENDEUR");
+        if (roleOpt.isPresent() && roleVend.isPresent()) {
             adminRole = roleOpt.get();
+            vendeurRole = roleVend.get();
         } else {
             adminRole = new Role();
             adminRole.setName("ROLE_ADMIN");
             adminRole = roleDao.save(adminRole);
+
+            vendeurRole= new Role();
+            vendeurRole.setName("ROLE_VENDEUR");
+            vendeurRole = roleDao.save(vendeurRole);
         }
 
         if (userDao.findByUsername("admin").isEmpty()) {
@@ -44,6 +51,17 @@ public class DataInitializer implements CommandLineRunner {
             admin.setRoles(adminRoles);
 
             userDao.save(admin);
+        }
+        if (userDao.findByUsername("vendeur").isEmpty()) {
+            User vendeur = new User();
+            vendeur.setUsername("vendeur");
+            vendeur.setPassword(passwordEncoder.encode("vendeur"));
+
+            Set<Role> vendeurRoles = new HashSet<>();
+            vendeurRoles.add(adminRole);
+            vendeur.setRoles(vendeurRoles);
+
+            userDao.save(vendeur);
         }
     }
 }
