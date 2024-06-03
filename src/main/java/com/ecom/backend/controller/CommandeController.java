@@ -31,7 +31,6 @@ public class CommandeController {
         return new ResponseEntity<>(commandeService.save(dto), HttpStatus.CREATED);
     }
     @PutMapping("/id/{id}")
-    //@PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<CommandeGetDto> update(@RequestBody CommandeGetDto dto, @PathVariable Long id){
         return ResponseEntity.ok(commandeService.update(dto,id));
     }

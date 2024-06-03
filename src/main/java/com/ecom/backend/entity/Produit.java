@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -44,10 +45,18 @@ public class Produit {
     private Vehicule vehicule;
 
     @OneToMany(mappedBy = "produit", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonManagedReference(value = "produit-avis")
-    private List<Avis> avis;
+    private List<Avis> avis = new ArrayList<>();
 
     @ManyToOne
     @JoinColumn(name = "seller_id")
     private User seller;
+    public void addAvis(Avis avis) {
+        this.avis.add(avis);
+        avis.setProduit(this);
+    }
+
+    public void removeAvis(Avis avis) {
+        this.avis.remove(avis);
+        avis.setProduit(null);
+    }
 }

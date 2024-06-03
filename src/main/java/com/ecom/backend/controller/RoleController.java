@@ -30,7 +30,6 @@ public class RoleController {
         return new ResponseEntity<>(roleService.save(dto), HttpStatus.CREATED);
     }
     @PutMapping("/id/{id}")
-    //@PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<RoleDto> update(@RequestBody RoleDto dto, @PathVariable Long id){
         return ResponseEntity.ok(roleService.update(dto,id));
     }

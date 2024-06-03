@@ -1,6 +1,7 @@
 package com.ecom.backend.entity;
 
 import com.ecom.backend.enums.EtatCommande;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -18,7 +19,7 @@ public class Commande {
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = true)
-    @JsonManagedReference
+    @JsonBackReference
     private User user;
 
     @Enumerated(EnumType.STRING)

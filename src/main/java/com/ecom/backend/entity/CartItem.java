@@ -18,7 +18,7 @@ public class CartItem {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "produit_id",  nullable = false)
+    @JoinColumn(name = "produit_id", nullable = false)
     @JsonManagedReference
     private Produit produit;
 

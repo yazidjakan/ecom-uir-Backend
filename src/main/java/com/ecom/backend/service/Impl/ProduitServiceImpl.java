@@ -2,10 +2,14 @@ package com.ecom.backend.service.Impl;
 
 import com.ecom.backend.dto.ProduitDto.ProduitGetDto;
 import com.ecom.backend.dto.ProduitDto.ProduitPostDto;
+import com.ecom.backend.dto.UserDto;
 import com.ecom.backend.entity.Produit;
+import com.ecom.backend.entity.User;
 import com.ecom.backend.repository.ProduitRepository;
+import com.ecom.backend.repository.UserRepository;
 import com.ecom.backend.service.facade.ProduitService;
 import com.ecom.backend.transformer.ProduitTransformer;
+import com.ecom.backend.transformer.UserTransformer;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -18,6 +22,8 @@ import java.util.List;
 public class ProduitServiceImpl implements ProduitService {
     private final ProduitRepository produitDao;
     private final ProduitTransformer produitTransformer;
+    private final UserTransformer userTransformer;
+    private final UserRepository userDao;
     @Override
     public ProduitGetDto findById(Long id) {
         log.info("Fetching produit by ID: {}", id);
@@ -82,8 +88,29 @@ public class ProduitServiceImpl implements ProduitService {
         }
     }
 
+    public ProduitPostDto saveProductBySeller(ProduitPostDto dto, UserDto sellerDto) {
+        log.info("Creating new product with name: {}", dto.nom());
+
+        if (produitDao.findByNom(dto.nom()).isPresent()) {
+            log.warn("Attempted to create a duplicate product with name: {}", dto.nom());
+            throw new RuntimeException("This product name already exists");
+        }
+        try {
+            Produit produit = produitTransformer.toEntityPost(dto);
+            User seller = userDao.findById(sellerDto.id())
+                    .orElseThrow(() -> new RuntimeException("Seller not found"));
+            produit.setSeller(seller); // Associate the product with the seller
+            log.info("Successfully created product with name: {}", dto.nom());
+            return produitTransformer.toDtoPost(produitDao.save(produit));
+        } catch (Exception ex) {
+            log.error("Error occurred while creating product with name: {}", dto.nom(), ex);
+            throw new RuntimeException("An unexpected error occurred while creating the product." + ex);
+        }
+    }
+
     @Override
     public ProduitGetDto update(ProduitGetDto dto, Long id) {
+        log.info("Updating product with ID: {}", id);
         id = dto.id();
         ProduitGetDto existingProduitDto = findById(id);
         Produit existingProduit = produitTransformer.toEntity(dto);
@@ -100,6 +127,7 @@ public class ProduitServiceImpl implements ProduitService {
         log.info("Successfully updated product with ID: {}", dto.id());
         return produitTransformer.toDto(produitDao.save(existingProduit));
     }
+
 
     @Override
     public void deleteById(Long id) {

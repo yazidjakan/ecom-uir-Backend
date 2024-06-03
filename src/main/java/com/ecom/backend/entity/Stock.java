@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -24,6 +25,16 @@ public class Stock {
     private StatutStock statutStock;
 
     @OneToMany(mappedBy = "stock", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonBackReference
-    private List<Produit> produits;
+    private List<Produit> produits = new ArrayList<>();
+
+
+    public void addProduit(Produit produit) {
+        this.produits.add(produit);
+        produit.setStock(this);
+    }
+
+    public void removeProduit(Produit produit) {
+        this.produits.remove(produit);
+        produit.setStock(null);
+    }
 }
