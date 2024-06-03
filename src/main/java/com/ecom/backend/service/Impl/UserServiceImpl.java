@@ -124,19 +124,26 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserDto update(UserDto userDto, Long id) {
-        log.info("Updating user with ID: {}", userDto.id());
+        log.info("Updating user with ID: {}", id);
 
-        Long userId = userDto.id();
-        UserDto existingUserDto = findById(userId);
-        User existingUser = userTransformer.toEntity(existingUserDto);
-        existingUser.setId(userDto.id());
+        // Vérifie si l'utilisateur existe
+        User existingUser = userDao.findById(id)
+                .orElseThrow(() -> new RuntimeException("User not found"));
+
+        // Mets à jour les propriétés de l'utilisateur
         existingUser.setUsername(userDto.username());
         existingUser.setPassword(userDto.password());
         existingUser.setEmail(userDto.email());
-        existingUser.setRoles(roleTransformer.toEntitySet(userDto.roleDtos()));
 
-        log.info("User updated successfully with ID: {}", userDto.id());
-        return userTransformer.toDto(userDao.save(existingUser));
+        // Gère les rôles associés
+        existingUser.getRoles().clear();
+        existingUser.getRoles().addAll(roleTransformer.toEntitySet(userDto.roleDtos()));
+
+        // Sauvegarde l'utilisateur mis à jour
+        User updatedUser = userDao.save(existingUser);
+
+        log.info("User updated successfully with ID: {}", id);
+        return userTransformer.toDto(updatedUser);
     }
 
     @Override
@@ -162,6 +169,7 @@ public class UserServiceImpl implements UserService {
         }
 
         // Supprimer l'utilisateur
+        foundUser.roleDtos().clear();
         userDao.deleteById(foundUser.id());
         log.info("User deleted successfully with ID: {}", id);
     }
