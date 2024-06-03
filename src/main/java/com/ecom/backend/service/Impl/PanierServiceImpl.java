@@ -4,13 +4,16 @@ import com.ecom.backend.dto.CartItemDto.CartItemGetDto;
 import com.ecom.backend.dto.PanierDto.PanierGetDto;
 import com.ecom.backend.dto.PanierDto.PanierPostDto;
 
+import com.ecom.backend.dto.UserDto;
 import com.ecom.backend.entity.CartItem;
 import com.ecom.backend.entity.Panier;
 
 import com.ecom.backend.entity.Produit;
+import com.ecom.backend.entity.User;
 import com.ecom.backend.repository.CartItemRepository;
 import com.ecom.backend.repository.PanierRepository;
 import com.ecom.backend.repository.ProduitRepository;
+import com.ecom.backend.repository.UserRepository;
 import com.ecom.backend.service.facade.PanierService;
 import com.ecom.backend.transformer.CartItemTransformer;
 import com.ecom.backend.transformer.PanierTransformer;
@@ -31,11 +34,13 @@ public class PanierServiceImpl implements PanierService {
     private final CartItemRepository cartItemDao;
     private final CartItemTransformer cartItemTransformer;
     private final ProduitRepository produitDao;
+    private final UserRepository userDao;
 
     @Override
     public PanierGetDto findById(Long id) {
+        User user = userDao.findById(id).orElseThrow(() -> new RuntimeException("Utilisateur non trouvé"));
         log.info("Fetching Panier by ID: {}", id);
-        return panierDao.findById(id)
+        return panierDao.findByUser(user)
                 .map(panierTransformer::toDto)
                 .orElseThrow(() -> {
                     log.error("Panier not found with ID: {}", id);
@@ -47,10 +52,17 @@ public class PanierServiceImpl implements PanierService {
         List<CartItem> cartItems=cartItemDao.findAll();
         return cartItemTransformer.toDto(cartItems);
     }
-    public void addProduit(Long produitId) {
+    public void addProduit(Long produitId, Long userId) {
         Produit produit = produitDao.findById(produitId).orElseThrow(() -> new RuntimeException("Produit non trouvé"));
-        CartItem cartItem = cartItemDao.findByProduit(produit).orElse(new CartItem(produit, 0));
+        User user = userDao.findById(userId).orElseThrow(() -> new RuntimeException("Utilisateur non trouvé"));
+
+        Panier panier = panierDao.findByUser(user).orElse(new Panier(user));
+
+        CartItem cartItem = cartItemDao.findByProduitAndPanier(produit, panier)
+                .orElse(new CartItem(produit, panier, user, 0));
+        produit.setQuantite(produit.getQuantite() - 1);
         cartItem.setQuantite(cartItem.getQuantite() + 1);
+        panier.getItems().add(cartItem);
         cartItemDao.save(cartItem);
     }
 

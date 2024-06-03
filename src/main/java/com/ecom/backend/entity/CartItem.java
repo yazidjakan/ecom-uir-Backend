@@ -29,8 +29,25 @@ public class CartItem {
     @JsonBackReference
     private Panier panier;
 
-    public CartItem(Produit produit, int quantite) {
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
+
+    public CartItem(Produit produit, Panier panier, int quantite) {
         this.produit = produit;
+        this.panier = panier;
         this.quantite = quantite;
+    }
+
+    public CartItem(Produit produit, int quantite) {
+        this.produit=produit;
+        this.quantite=quantite;
+    }
+
+    public CartItem(Produit produit, Panier panier, User user, int quantite) {
+        this.produit = produit;
+        this.panier = panier;
+        this.quantite = quantite;
+        this.user=user;
     }
 }

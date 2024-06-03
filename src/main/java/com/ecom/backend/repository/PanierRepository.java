@@ -9,4 +9,5 @@ import java.util.Optional;
 
 @Repository
 public interface PanierRepository extends JpaRepository<Panier, Long> {
+    Optional<Panier> findByUser(User user);
 }

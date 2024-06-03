@@ -10,6 +10,8 @@ import com.ecom.backend.service.Impl.PanierServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,14 +24,15 @@ public class PanierController {
     private final PanierServiceImpl panierService;
 
 
-    @GetMapping("/")
-    public List<CartItemGetDto> getPanier() {
-        return panierService.getPanier();
+    @GetMapping("/id/{id}")
+    public ResponseEntity<PanierGetDto> getPanier(@PathVariable Long id) {
+        return ResponseEntity.ok(panierService.findById(id));
     }
 
-    @PostMapping("/add/{produitId}")
-    public void addProduit(@PathVariable Long produitId) {
-        panierService.addProduit(produitId);
+    @PostMapping("/add/{produitId}/{userId}")
+    public ResponseEntity<Void> addProduit(@PathVariable Long produitId, @PathVariable Long userId) {
+        panierService.addProduit(produitId, userId);
+        return ResponseEntity.ok().build();
     }
 
     @PostMapping("/remove/{produitId}")

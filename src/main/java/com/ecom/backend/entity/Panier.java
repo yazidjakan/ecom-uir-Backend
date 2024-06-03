@@ -23,6 +23,13 @@ public class Panier {
     @JsonManagedReference
     private List<CartItem> items = new ArrayList<>();
 
+    @OneToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    private User user;
+    public Panier(User user) {
+        this.user = user;
+    }
+
     public void addItem(Produit produit) {
         for (CartItem item : items) {
             if (item.getProduit().getId().equals(produit.getId())) {
