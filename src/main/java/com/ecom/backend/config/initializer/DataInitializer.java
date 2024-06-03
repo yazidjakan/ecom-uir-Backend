@@ -25,9 +25,11 @@ public class DataInitializer implements CommandLineRunner {
     public void run(String... args) throws Exception {
         Role adminRole;
         Role vendeurRole;
+        Role clientRole;
 
         var roleOpt = roleDao.findByName("ROLE_ADMIN");
         var roleVend=roleDao.findByName("ROLE_VENDEUR");
+        var roleCl=roleDao.findByName("ROLE_CLIENT");
         if (roleOpt.isPresent() && roleVend.isPresent()) {
             adminRole = roleOpt.get();
             vendeurRole = roleVend.get();
@@ -62,6 +64,11 @@ public class DataInitializer implements CommandLineRunner {
             vendeur.setRoles(vendeurRoles);
 
             userDao.save(vendeur);
+        }
+        if(roleDao.findByName("ROLE_CLIENT").isEmpty()){
+            Role role=new Role();
+            role.setName("ROLE_CLIENT");
+            roleDao.save(role);
         }
     }
 }
