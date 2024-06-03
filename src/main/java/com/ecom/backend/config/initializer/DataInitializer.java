@@ -60,7 +60,7 @@ public class DataInitializer implements CommandLineRunner {
             vendeur.setPassword(passwordEncoder.encode("vendeur"));
 
             Set<Role> vendeurRoles = new HashSet<>();
-            vendeurRoles.add(adminRole);
+            vendeurRoles.add(vendeurRole);
             vendeur.setRoles(vendeurRoles);
 
             userDao.save(vendeur);
