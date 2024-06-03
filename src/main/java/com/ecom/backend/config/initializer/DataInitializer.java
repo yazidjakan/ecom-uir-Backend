@@ -66,9 +66,9 @@ public class DataInitializer implements CommandLineRunner {
             userDao.save(vendeur);
         }
         if(roleDao.findByName("ROLE_CLIENT").isEmpty()){
-            Role role=new Role();
-            role.setName("ROLE_CLIENT");
-            roleDao.save(role);
+            clientRole=new Role();
+            clientRole.setName("ROLE_CLIENT");
+            roleDao.save(clientRole);
         }
     }
 }
