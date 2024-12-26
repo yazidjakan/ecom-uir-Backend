@@ -1,63 +1,12 @@
-2024-06-03 00:00:00 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-06-03 00:00:00 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 118 ms. Found 10 JPA repository interfaces.
-2024-06-03 00:00:01 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8075 (http)
-2024-06-03 00:00:01 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8075"]
-2024-06-03 00:00:01 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2024-06-03 00:00:01 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
-2024-06-03 00:00:01 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2024-06-03 00:00:01 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2315 ms
-2024-06-03 00:00:01 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2024-06-03 00:00:01 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3c3def61
-2024-06-03 00:00:01 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2024-06-03 00:00:01 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/ecom_db'
-2024-06-03 00:00:02 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-06-03 00:00:02 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
-2024-06-03 00:00:02 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-2024-06-03 00:00:02 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-06-03 00:00:02 [restartedMain] WARN  org.hibernate.dialect.Dialect - HHH000511: The 5.5.0 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
-2024-06-03 00:00:02 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-06-03 00:00:04 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-06-03 00:00:04 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-06-03 00:00:05 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-06-03 00:00:05 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@54b2de6, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@89786c0, org.springframework.security.web.context.SecurityContextHolderFilter@5042c72b, org.springframework.security.web.header.HeaderWriterFilter@5abab026, org.springframework.web.filter.CorsFilter@6590c34b, org.springframework.security.web.authentication.logout.LogoutFilter@3993843b, com.ecom.backend.config.JwtTokenFilter@42193658, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@66c7e6a9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@13f7b4f1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@21662b7e, org.springframework.security.web.session.SessionManagementFilter@53675905, org.springframework.security.web.access.ExceptionTranslationFilter@19f9b0f0, org.springframework.security.web.access.intercept.AuthorizationFilter@1fc25275]
-2024-06-03 00:00:06 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
-2024-06-03 00:00:06 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8075"]
-2024-06-03 00:00:06 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8075 (http) with context path ''
-2024-06-03 00:00:06 [restartedMain] INFO  com.ecom.backend.BackendApplication - Started BackendApplication in 7.624 seconds (process running for 8.451)
-2024-06-03 00:00:35 [http-nio-8075-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-06-03 00:00:35 [http-nio-8075-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2024-06-03 00:00:35 [http-nio-8075-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
-2024-06-03 00:00:39 [http-nio-8075-exec-5] INFO  c.e.b.s.Impl.CommandeServiceImpl - Fetching commande by ID: 2
-2024-06-03 00:00:39 [http-nio-8075-exec-6] INFO  c.e.b.service.Impl.UserServiceImpl - Fetching all users
-2024-06-03 00:00:42 [http-nio-8075-exec-8] WARN  o.s.h.c.j.MappingJackson2HttpMessageConverter - Failed to evaluate Jackson deserialization for type [[simple type, class com.ecom.backend.dto.CommandeDto.CommandeGetDto]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': back reference type (`java.util.List<com.ecom.backend.entity.Commande>`) not compatible with managed type (com.ecom.backend.entity.Commande)
-2024-06-03 00:00:42 [http-nio-8075-exec-8] WARN  o.s.h.c.j.MappingJackson2HttpMessageConverter - Failed to evaluate Jackson deserialization for type [[simple type, class com.ecom.backend.dto.CommandeDto.CommandeGetDto]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': back reference type (`java.util.List<com.ecom.backend.entity.Commande>`) not compatible with managed type (com.ecom.backend.entity.Commande)
-2024-06-03 00:00:42 [http-nio-8075-exec-8] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'application/json;charset=UTF-8' is not supported]
-2024-06-03 00:00:47 [http-nio-8075-exec-9] WARN  o.s.h.c.j.MappingJackson2HttpMessageConverter - Failed to evaluate Jackson deserialization for type [[simple type, class com.ecom.backend.dto.CommandeDto.CommandeGetDto]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': back reference type (`java.util.List<com.ecom.backend.entity.Commande>`) not compatible with managed type (com.ecom.backend.entity.Commande)
-2024-06-03 00:00:47 [http-nio-8075-exec-9] WARN  o.s.h.c.j.MappingJackson2HttpMessageConverter - Failed to evaluate Jackson deserialization for type [[simple type, class com.ecom.backend.dto.CommandeDto.CommandeGetDto]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': back reference type (`java.util.List<com.ecom.backend.entity.Commande>`) not compatible with managed type (com.ecom.backend.entity.Commande)
-2024-06-03 00:00:47 [http-nio-8075-exec-9] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'application/json;charset=UTF-8' is not supported]
-2024-06-03 00:00:55 [http-nio-8075-exec-3] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
-2024-06-03 00:00:55 [http-nio-8075-exec-4] INFO  c.e.b.s.Impl.ProduitServiceImpl - Fetching produit by ID: 2
-2024-06-03 00:01:03 [http-nio-8075-exec-6] WARN  o.s.h.c.j.MappingJackson2HttpMessageConverter - Failed to evaluate Jackson deserialization for type [[simple type, class com.ecom.backend.dto.ProduitDto.ProduitGetDto]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': back reference type (`java.util.List<com.ecom.backend.entity.Commande>`) not compatible with managed type (com.ecom.backend.entity.Commande)
-2024-06-03 00:01:03 [http-nio-8075-exec-6] WARN  o.s.h.c.j.MappingJackson2HttpMessageConverter - Failed to evaluate Jackson deserialization for type [[simple type, class com.ecom.backend.dto.ProduitDto.ProduitGetDto]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': back reference type (`java.util.List<com.ecom.backend.entity.Commande>`) not compatible with managed type (com.ecom.backend.entity.Commande)
-2024-06-03 00:01:03 [http-nio-8075-exec-6] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'application/json;charset=UTF-8' is not supported]
-2024-06-03 00:01:09 [http-nio-8075-exec-9] INFO  c.e.b.service.Impl.StockServiceImpl - Fetching all stocks
-2024-06-03 00:01:09 [http-nio-8075-exec-1] INFO  c.e.b.service.Impl.UserServiceImpl - Fetching all users
-2024-06-03 00:01:11 [http-nio-8075-exec-3] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
-2024-06-03 00:01:28 [http-nio-8075-exec-8] INFO  c.e.b.s.Impl.VehiculeServiceImpl - Fetching all Vehicules
-2024-06-03 00:01:28 [http-nio-8075-exec-7] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.ClassCastException: class java.lang.String cannot be cast to class org.springframework.security.core.userdetails.UserDetails (java.lang.String is in module java.base of loader 'bootstrap'; org.springframework.security.core.userdetails.UserDetails is in unnamed module of loader 'app')] with root cause
-java.lang.ClassCastException: class java.lang.String cannot be cast to class org.springframework.security.core.userdetails.UserDetails (java.lang.String is in module java.base of loader 'bootstrap'; org.springframework.security.core.userdetails.UserDetails is in unnamed module of loader 'app')
-	at com.ecom.backend.controller.ProduitController.getSellerProducts(ProduitController.java:39)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:354)
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:716)
-	at com.ecom.backend.controller.ProduitController$$SpringCGLIB$$0.getSellerProducts(<generated>)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+2024-06-03 01:25:53 [http-nio-8075-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-03 01:25:53 [http-nio-8075-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-06-03 01:25:53 [http-nio-8075-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 19 ms
+2024-06-03 01:52:59 [http-nio-8075-exec-8] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.RuntimeException: List of commandes is Empty] with root cause
+java.lang.RuntimeException: List of commandes is Empty
+	at com.ecom.backend.service.Impl.CommandeServiceImpl.findAll(CommandeServiceImpl.java:37)
+	at com.ecom.backend.controller.CommandeController.findAll(CommandeController.java:22)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
 	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
 	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
@@ -159,7 +108,7 @@ java.lang.ClassCastException: class java.lang.String cannot be cast to class org
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
-	at java.base/java.lang.Thread.run(Thread.java:842)
-2024-06-03 00:02:28 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-06-03 00:02:28 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2024-06-03 00:02:28 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-06-03 11:02:36 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=5h4m22s42ms984µs700ns).
+2024-06-03 16:22:46 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3h22m8s72ms157µs400ns).
+2024-06-03 16:40:03 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m16s260ms684µs100ns).
